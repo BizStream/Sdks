@@ -1,0 +1,32 @@
+<Project>
+
+    <PropertyGroup>
+        <BizStreamSdkPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</BizStreamSdkPath>
+    </PropertyGroup>
+
+    <!-- Build -->
+    <PropertyGroup>
+        <Configuration>Debug</Configuration>
+        <LangVersion>latest</LangVersion>
+
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <!-- Disable legacy analyzers, and enable roslyn analyzers with the default ruleset -->
+        <RunCodeAnalysis>false</RunCodeAnalysis>
+        <RunAnalyzers>true</RunAnalyzers>
+    </PropertyGroup>
+
+    <!-- Versioning -->
+    <PropertyGroup>
+        <UseGitVersioning>true</UseGitVersioning>
+    </PropertyGroup>
+
+    <!-- NuGet/AssemblyInfo -->
+    <PropertyGroup>
+        <Title>$(AssemblyName)</Title>
+        <PackageId>$(AssemblyName)</PackageId>
+        <Authors>BizStream</Authors>
+        <Copyright>$([System.DateTime]::Now.Year) BizStream</Copyright>
+    </PropertyGroup>
+
+</Project>
