@@ -1,0 +1,20 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Set some project defaults -->
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <PlatformTarget>x64</PlatformTarget>
+    <TargetFrameworks>netcoreapp3.1;net48;net5.0</TargetFrameworks>
+    <UseGitVersioning>false</UseGitVersioning>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Disable documentation generation -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+    <!-- We don't care about certain CodeAnalysis warnings in the test projects -->
+    <NoWarn>CA1303;CA1707;CA1724;CA1822;CA2000;SA1203;</NoWarn>
+  </PropertyGroup>
+
+</Project>

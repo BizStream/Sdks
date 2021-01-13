@@ -1,17 +1,8 @@
 <Project Sdk="Microsoft.Build.NoTargets/2.0.1">
-  <Import Project="build\BizStream.NET.Sdk.props" />
 
   <PropertyGroup>
     <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <UseGitVersioning>false</UseGitVersioning>
     <Version>1.0.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <NoDefaultExcludes>true</NoDefaultExcludes>
-    <NoPackageAnalysis>true</NoPackageAnalysis>
-    <RunAnalyzers>false</RunAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,9 +13,8 @@
   <!-- NOTE: transitive build packages (PrivateAssets="none" includes .props/.targets in project referencing this Sdk) -->
   <ItemGroup>
     <PackageReference Include="GitInfo" Version="2.1.2" PrivateAssets="none" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" PrivateAssets="none" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="none" />
   </ItemGroup>
 
-  <Import Project="build\BizStream.NET.Sdk.targets" />
 </Project>
