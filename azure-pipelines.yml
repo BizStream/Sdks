@@ -1,0 +1,41 @@
+name: $(Date:yyyyMMdd)$(Rev:-r)
+
+pr:
+  branches:
+    include:
+      - develop
+      - feature/*
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+steps:
+  - task: DotNetCoreCLI@2
+    displayName: restore dependencies
+    inputs:
+      command: restore
+      projects: src/**/src/*.csproj
+
+  - task: DotNetCoreCLI@2
+    displayName: build projects
+    inputs:
+      projects: src/**/src/*.csproj
+      arguments: --no-restore
+
+  - task: DotNetCoreCLI@2
+    displayName: create packages
+    inputs:
+      command: pack
+      packagesToPack: src/**/src/*.csproj;!src/**/test/*.Tests.csproj
+      nobuild: true
+      includesymbols: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: publish artifact
+    inputs:
+      PathtoPublish: $(build.artifactstagingdirectory)
+      ArtifactName: bzs-sdks
+    condition: succeededOrFailed()
