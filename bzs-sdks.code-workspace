@@ -38,8 +38,9 @@
   },
   "extensions": {
     "recommendations": [
+      "editorconfig.editorconfig",
+      "fernandoescolar.vscode-solution-explorer",
       "ms-dotnettools.csharp",
-      "ban.spellright",
       "streetsidesoftware.code-spell-checker"
     ]
   }
