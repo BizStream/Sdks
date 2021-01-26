@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.Build.NoTargets/2.0.1">
+
+  <PropertyGroup>
+    <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
+    <VersionPrefix>1.0.0</VersionPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build\*" PackagePath="build\" />
+    <Content Include="buildMultiTargeting\*" PackagePath="buildMultiTargeting\" />
+  </ItemGroup>
+
+  <!-- NOTE: transitive build packages (PrivateAssets="none" includes .props/.targets in project referencing this Sdk) -->
+  <ItemGroup>
+    <PackageReference Include="GitInfo" Version="2.1.2" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" PrivateAssets="none" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="none" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+<Project>
+
+    <PropertyGroup Condition=" '$(GenerateDocumentationFile)' == 'true' ">
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    </PropertyGroup>
+
+    <!-- Code Analysis-->
+    <PropertyGroup Condition=" '$(RunAnalyzers)' == 'true' ">
+        <CodeAnalysisRuleSet>$(BizStreamSdkPath)\BizStreamStandardRules.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <ItemGroup Condition=" '$(RunAnalyzers)' == 'true' ">
+        <AdditionalFiles Include="$(BizStreamSdkPath)\.editorconfig" Visible="false" />
+        <Compile Include="$(BizStreamSdkPath)\CodeStyleSuppressions.cs" Visible="false" />
+    </ItemGroup>
+
+    <PropertyGroup Condition=" '$(UseGitVersioning)' == 'true' ">
+
+        <!-- TODO: detect CI environment: this is for Azure DevOps, GitHub Actions are next priority -->
+        <GitBranch Condition=" '$(BUILD_SOURCEBRANCHNAME)' != '' ">$(BUILD_SOURCEBRANCHNAME)</GitBranch>
+        <GitThisAssembly>false</GitThisAssembly>
+        <GitSkipCache>true</GitSkipCache>
+        <GitIgnoreTagVersion>true</GitIgnoreTagVersion>
+
+        <!-- default prefix -->
+        <VersionPrefix Condition=" '$(VersionPrefix)' == '' ">0.0.1</VersionPrefix>
+
+        <GenerateNuspecDependsOn>SetVersion;$(GenerateNuspecDependsOn)</GenerateNuspecDependsOn>
+        <GetPackageVersionDependsOn>SetVersion;$(GetPackageVersionDependsOn)</GetPackageVersionDependsOn>
+    </PropertyGroup>
+
+    <Target Name="SetVersion" BeforeTargets="PrepareForBuild;GetAssemblyVersion;GetPackageVersion;GenerateNuspec;Pack" DependsOnTargets="GitInfo" Condition=" '$(UseGitVersioning)' == 'true' AND '$(GitInfoImported)' == 'true' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+        <PropertyGroup>
+            <!-- Force a release build -->
+            <Configuration Condition=" '$(GitBranch)' == 'master' ">Release</Configuration>
+            <Configuration Condition=" '$(GitBranch)' == 'main' ">Release</Configuration>
+
+            <!-- Set build metadata based on branch -->
+            <VersionSuffix>alpha.$(GitCommit)</VersionSuffix>
+            <VersionSuffix Condition=" '$(GitBranch)' == 'develop' ">beta.$(GitCommit)</VersionSuffix>
+
+            <!-- Release builds should not contain build metadata -->
+            <VersionSuffix Condition=" '$(Configuration)' == 'Release' "></VersionSuffix>
+
+            <Version>$(VersionPrefix)</Version>
+            <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)-$(VersionSuffix)</Version>
+
+            <!-- Set the NuGet package version -->
+            <PackageVersion>$(Version)</PackageVersion>
+        </PropertyGroup>
+    </Target>
+
+</Project>

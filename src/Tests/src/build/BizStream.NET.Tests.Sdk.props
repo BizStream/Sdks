@@ -1,0 +1,19 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Set some project defaults -->
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseGitVersioning>false</UseGitVersioning>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Disable documentation generation -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+    <!-- We don't care about certain CodeAnalysis warnings in the test projects -->
+    <NoWarn>CA1303;CA1707;CA1724;CA1822;CA2000;SA1203;</NoWarn>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.Build.NoTargets/2.0.1">
+
+    <PropertyGroup>
+        <Description>Build configuration for test projects of packages and libraries distributed by BizStream.</Description>
+        <VersionPrefix>1.0.0</VersionPrefix>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="build\*" PackagePath="build\" />
+        <Content Include="buildMultiTargeting\*" PackagePath="buildMultiTargeting\" />
+    </ItemGroup>
+
+    <!-- NOTE: transitive build packages (PrivateAssets="none" includes .props/.targets in project referencing this Sdk) -->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" PrivateAssets="none" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" PrivateAssets="none" />
+        <PackageReference Include="coverlet.collector" Version="3.0.0" PrivateAssets="none" />
+    </ItemGroup>
+
+</Project>
+
+

@@ -1,0 +1,47 @@
+{
+  "folders": [{ "name": "{ BizStream Sdks }", "path": "." }],
+  "settings": {
+    "cSpell.words": ["Kentico", "Xperience",],
+    "cSpell.ignorePaths": [
+      "**/package-lock.json",
+      "**/node_modules/**",
+      "**/vscode-extension/**",
+      "**/.git/objects/**",
+      ".vscode",
+      ".vscode-insiders",
+      "*.code-workspace",
+
+      "azure-pipelines.yml"
+    ],
+    "csharp.referencesCodeLens.enabled": false,
+    "editor.codeLens": false,
+    "editor.tabSize": 4,
+    "javascript.validate.enable": false,
+    "omnisharp.autoStart": true,
+    "omnisharp.enableEditorConfigSupport": true,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+
+      "**/*.csproj.user": true,
+      "**/.vs/": true,
+      "**/bin/": true,
+      "**/node_modules/": true,
+      "**/obj/": true,
+    },
+    "razor.format.enable": true,
+    "razor.trace": "Messages",
+  },
+  "extensions": {
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "fernandoescolar.vscode-solution-explorer",
+      "ms-dotnettools.csharp",
+      "streetsidesoftware.code-spell-checker"
+    ]
+  }
+}

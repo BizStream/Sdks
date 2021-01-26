@@ -1,0 +1,18 @@
+<Project>
+
+    <PropertyGroup>
+        <!-- Create a property to easily reference the root of the `src` folder -->
+        <SourceDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</SourceDirectory>
+    </PropertyGroup>
+
+    <Import Project="$(SourceDirectory)\Sdk\src\build\BizStream.NET.Sdk.props" />
+
+    <PropertyGroup>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <RunAnalyzers>false</RunAnalyzers>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <UseGitVersioning>true</UseGitVersioning>
+    </PropertyGroup>
+
+</Project>
