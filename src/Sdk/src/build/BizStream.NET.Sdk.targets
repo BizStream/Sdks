@@ -52,7 +52,7 @@
 
     <Target Name="SetBizStreamSdkTags" BeforeTargets="GenerateNuspec;Pack">
         <PropertyGroup>
-            <Tags>$(Tags);bzs-libraries</Tags>
+            <PackageTags>$(PackageTags);bzs-libraries;</PackageTags>
         </PropertyGroup>
     </Target>
 
