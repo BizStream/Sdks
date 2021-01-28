@@ -27,6 +27,7 @@
         <PackageId>$(AssemblyName)</PackageId>
         <Authors>BizStream</Authors>
         <Copyright>$([System.DateTime]::Now.Year) BizStream</Copyright>
+        <IconUrl>https://www.bizstream.com/favicon.ico</IconUrl>
     </PropertyGroup>
 
 </Project>

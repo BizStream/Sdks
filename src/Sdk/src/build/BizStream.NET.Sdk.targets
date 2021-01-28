@@ -1,5 +1,9 @@
 <Project>
 
+    <PropertyGroup>
+        <Tags>$(Tags);bzs-libraries</Tags>
+    </PropertyGroup>
+
     <PropertyGroup Condition=" '$(GenerateDocumentationFile)' == 'true' ">
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
