@@ -6,4 +6,11 @@
 
     <Import Project="$(SourceDirectory)\Sdk\src\build\BizStream.NET.Sdk.targets" />
 
+    <Target Name="SetRepositoryGitMetadata" BeforeTargets="GenerateNuspec;Pack" DependsOnTargets="GitInfo">
+        <PropertyGroup>
+            <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+            <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+        </PropertyGroup>
+    </Target>
+
 </Project>

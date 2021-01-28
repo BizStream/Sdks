@@ -1,9 +1,5 @@
 <Project>
 
-    <PropertyGroup>
-        <Tags>$(Tags);bzs-libraries</Tags>
-    </PropertyGroup>
-
     <PropertyGroup Condition=" '$(GenerateDocumentationFile)' == 'true' ">
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
@@ -51,6 +47,12 @@
 
             <!-- Set the NuGet package version -->
             <PackageVersion>$(Version)</PackageVersion>
+        </PropertyGroup>
+    </Target>
+
+    <Target Name="SetBizStreamSdkTags" BeforeTargets="GenerateNuspec;Pack">
+        <PropertyGroup>
+            <Tags>$(Tags);bzs-libraries</Tags>
         </PropertyGroup>
     </Target>
 

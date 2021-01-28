@@ -3,7 +3,6 @@
     <PropertyGroup>
         <Description>Build configuration for test projects of packages and libraries distributed by BizStream.</Description>
         <VersionPrefix>1.0.1</VersionPrefix>
-        <ProjectUrl>https://github.com/BizStream/Sdks/tree/main/src/Tests</ProjectUrl>
     </PropertyGroup>
 
     <ItemGroup>

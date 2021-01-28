@@ -3,7 +3,6 @@
     <PropertyGroup>
         <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
         <VersionPrefix>1.0.1</VersionPrefix>
-        <ProjectUrl>https://github.com/BizStream/Sdks/tree/main/src/Sdk</ProjectUrl>
     </PropertyGroup>
 
     <ItemGroup>

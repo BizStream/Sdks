@@ -23,11 +23,11 @@
 
     <!-- NuGet/AssemblyInfo -->
     <PropertyGroup>
-        <Title>$(AssemblyName)</Title>
-        <PackageId>$(AssemblyName)</PackageId>
         <Authors>BizStream</Authors>
         <Copyright>$([System.DateTime]::Now.Year) BizStream</Copyright>
-        <IconUrl>https://www.bizstream.com/favicon.ico</IconUrl>
+        <PackageIconUrl>https://www.bizstream.com/favicon.ico</PackageIconUrl>
+        <PackageId>$(AssemblyName)</PackageId>
+        <Title>$(AssemblyName)</Title>
     </PropertyGroup>
 
 </Project>
