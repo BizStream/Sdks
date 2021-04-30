@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.Build.NoTargets/2.0.17">
+<Project Sdk="Microsoft.Build.NoTargets/3.0.4">
 
     <PropertyGroup>
         <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
