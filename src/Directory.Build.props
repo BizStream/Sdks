@@ -15,4 +15,10 @@
         <UseGitVersioning>true</UseGitVersioning>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryUrl>https://github.com/BizStream/Sdks.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
 </Project>

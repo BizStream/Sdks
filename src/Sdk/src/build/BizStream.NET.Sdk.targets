@@ -50,4 +50,10 @@
         </PropertyGroup>
     </Target>
 
+    <Target Name="SetBizStreamSdkTags" BeforeTargets="GenerateNuspec;Pack">
+        <PropertyGroup>
+            <PackageTags>$(PackageTags);bzs-libraries;</PackageTags>
+        </PropertyGroup>
+    </Target>
+
 </Project>
