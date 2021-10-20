@@ -1,7 +1,7 @@
 <Project>
 
     <ItemGroup>
-        <PackageReference Include="GitInfo" Version="2.1.2" PrivateAssets="all" />
+        <PackageReference Include="GitInfo" Version="2.*" PrivateAssets="all" />
     </ItemGroup>
 
     <Import Project="$(SourceDirectory)\Sdk\src\build\BizStream.NET.Sdk.targets" />
