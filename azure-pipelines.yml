@@ -1,4 +1,6 @@
 name: $(Date:yyyyMMdd)$(Rev:-r)
+pool:
+  vmImage: "windows-latest"
 
 pr:
   branches:
