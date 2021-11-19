@@ -10,8 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(RunAnalyzers)' == 'true' ">
-        <AdditionalFiles Include="$(BizStreamSdkPath)\.editorconfig" Visible="false" />
         <Compile Include="$(BizStreamSdkPath)\CodeStyleSuppressions.cs" Visible="false" />
+        <None Include="$(BizStreamSdkPath)\.editorconfig" Visible="false" />
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(UseGitVersioning)' == 'true' ">
