@@ -1,4 +1,4 @@
-name: $(Date:yyyyMMdd)$(Rev:-r)
+name: $(Date:yyyyMMdd)$(Rev:_r)
 pool:
   vmImage: "windows-latest"
 
@@ -15,6 +15,23 @@ trigger:
       - develop
 
 steps:
+  - task: UseDotNet@2
+    displayName: use netcoreapp3.1 sdk
+    inputs:
+      version: "3.1.x"
+      performMultiLevelLookup: true
+
+  - task: UseDotNet@2
+    displayName: use net5.0 sdk
+    inputs:
+      version: "5.0.x"
+      performMultiLevelLookup: true
+
+  - task: UseDotNet@2
+    displayName: use net6.0 sdk
+    inputs:
+      version: "6.0.x"
+
   - task: DotNetCoreCLI@2
     displayName: restore dependencies
     inputs:
