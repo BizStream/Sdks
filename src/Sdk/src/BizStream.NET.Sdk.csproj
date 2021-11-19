@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.Build.NoTargets/3.1.0">
+<Project Sdk="Microsoft.Build.NoTargets/3.2.14">
 
     <PropertyGroup>
         <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
-        <VersionPrefix>1.1.0</VersionPrefix>
+        <VersionPrefix>1.2.0</VersionPrefix>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,8 +13,8 @@
     <!-- NOTE: transitive build packages (PrivateAssets="none" includes .props/.targets in project referencing this Sdk) -->
     <ItemGroup>
         <PackageReference Include="GitInfo" Version="2.*" PrivateAssets="none" />
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.*" PrivateAssets="none" />
-        <PackageReference Include="StyleCop.Analyzers" Version="1.1.*" PrivateAssets="none" />
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.*" PrivateAssets="none" />
+        <PackageReference Include="StyleCop.Analyzers" Version="*-*" PrivateAssets="none" />
     </ItemGroup>
 
 </Project>

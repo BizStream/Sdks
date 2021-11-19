@@ -4,6 +4,7 @@
     <!-- Set some project defaults -->
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <IsMvcTestProject>false</IsMvcTestProject>
     <PlatformTarget>x64</PlatformTarget>
     <UseGitVersioning>false</UseGitVersioning>
   </PropertyGroup>
