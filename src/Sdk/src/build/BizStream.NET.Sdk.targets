@@ -47,6 +47,11 @@
 
             <!-- Set the NuGet package version -->
             <PackageVersion>$(Version)</PackageVersion>
+
+            <!-- Set git metadata -->
+            <RepositoryUrl Condition=" '$(PublishRepositoryUrl)' == 'true' ">$(GitRepositoryUrl)</RepositoryUrl>
+            <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+            <RepositoryCommit>$(GitCommit)</RepositoryCommit>
         </PropertyGroup>
     </Target>
 
