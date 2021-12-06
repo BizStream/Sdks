@@ -10,8 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(RunAnalyzers)' == 'true' ">
-        <AdditionalFiles Include="$(BizStreamSdkPath)\.editorconfig" Visible="false" />
         <Compile Include="$(BizStreamSdkPath)\CodeStyleSuppressions.cs" Visible="false" />
+        <None Include="$(BizStreamSdkPath)\.editorconfig" Visible="false" />
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(UseGitVersioning)' == 'true' ">
@@ -47,6 +47,11 @@
 
             <!-- Set the NuGet package version -->
             <PackageVersion>$(Version)</PackageVersion>
+
+            <!-- Set git metadata -->
+            <RepositoryUrl Condition=" '$(PublishRepositoryUrl)' == 'true' ">$(GitRepositoryUrl)</RepositoryUrl>
+            <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+            <RepositoryCommit>$(GitCommit)</RepositoryCommit>
         </PropertyGroup>
     </Target>
 

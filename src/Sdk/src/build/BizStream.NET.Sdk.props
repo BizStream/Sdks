@@ -9,6 +9,9 @@
         <Configuration>Debug</Configuration>
         <LangVersion>latest</LangVersion>
 
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <!-- Disable legacy analyzers, and enable roslyn analyzers with the default ruleset -->
@@ -18,8 +21,10 @@
         <_SkipUpgradeNetAnalyzersNuGetWarning>true</_SkipUpgradeNetAnalyzersNuGetWarning>
     </PropertyGroup>
 
-    <!-- Versioning -->
+    <!-- Git Versioning+Metadat -->
     <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
         <UseGitVersioning>true</UseGitVersioning>
     </PropertyGroup>
 
