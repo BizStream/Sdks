@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <Description>Core build and release configuration for packages and libraries distributed by BizStream.</Description>
-        <VersionPrefix>1.2.0</VersionPrefix>
+        <VersionPrefix>1.2.1</VersionPrefix>
     </PropertyGroup>
 
     <ItemGroup>
